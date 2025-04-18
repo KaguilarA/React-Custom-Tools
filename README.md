@@ -4,16 +4,26 @@ Este repositorio contiene hooks y funciones utilitarias que reutilizo en mis pro
 
 ## Contenido actual
 
-### `useApi.js`
+### `useCounter.js`
+
+Un hook personalizado para gestionar un contador simple con operaciones de incremento, decremento y reinicio.
+
+```ts
+import { useCounter } from './useCounter';
+
+const { counter, decrement, increment, reset } = useCounter(20);
+```
+
+### `useFetch.js`
 
 Hook personalizado para realizar operaciones CRUD con la API utilizando `fetch`. Soporta métodos `GET`, `POST`, `PUT`, `PATCH`, y `DELETE`.
 
 #### Ejemplo de uso:
 
 ```ts
-import { useApi } from './useApi';
+import { useFetch } from './useFetch';
 
-const { data, isLoading, hasError, get, post } = useApi('/api/endpoint', {
+const { data, isLoading, hasError, get, post } = useFetch('/api/endpoint', {
   autoFetch: true,
   headers: { Authorization: 'Bearer token' }
 });

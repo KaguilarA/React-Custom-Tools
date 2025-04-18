@@ -47,7 +47,7 @@ export const useForm = (initialForm = {}, validateFn) => {
   // Run validation when the form state changes
   useEffect(() => {
     if (validateFn) {
-      const validationErrors = MouseEvent(formState);
+      const validationErrors = validateFn(formState);
       setErrors(validationErrors || {});
     }
   }, [formState, validateFn]);
